@@ -30,18 +30,19 @@ const Usercollection = mongoose.model("user",USER_SCHEMA);
 
 //SERVERS REQUESTS
 app.get("/",(req,res)=>{
+    res.send("good morning");
   
-async function findData()
-{
-  try{ const respond =  await Usercollection.find({})
-   console.log(respond);
-   res.json(JSON.stringify(respond));
-}
-catch(error){
-    console.log(error);
-}
-}
-findData();
+// async function findData()
+// {
+//   try{ const respond =  await Usercollection.find({})
+//    console.log(respond);
+//    res.json(JSON.stringify(respond));
+// }
+// catch(error){
+//     console.log(error);
+// }
+// }
+// findData();
 
 })
 
