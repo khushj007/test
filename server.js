@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require('cors')
 const mongoose = require("mongoose");
+const path = require("path");
 dotenv.config();
 const database = process.env.DATABASE
 
@@ -28,7 +29,7 @@ const Usercollection = mongoose.model("user",USER_SCHEMA);
 
 
 //SERVERS REQUESTS
-app.get("/details",(req,res)=>{
+app.get("/",(req,res)=>{
   
 async function findData()
 {
@@ -40,7 +41,7 @@ findData();
 
 })
 
-app.post("/details",(req,res)=>{
+app.post("/",(req,res)=>{
 
     const Fname  = req.body.fname ; 
     const Lname =  req.body.lname ;
