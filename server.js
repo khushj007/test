@@ -45,7 +45,7 @@ findData();
 
 })
 
-app.post("/",(req,res)=>{
+app.post("/send",(req,res)=>{
 
     const Fname  = req.body.fname ; 
     const Lname =  req.body.lname ;
