@@ -33,9 +33,13 @@ app.get("/",(req,res)=>{
   
 async function findData()
 {
-   const respond =  await Usercollection.find({})
+  try{ const respond =  await Usercollection.find({})
    console.log(respond);
    res.json(JSON.stringify(respond));
+}
+catch(error){
+    console.log(error);
+}
 }
 findData();
 
