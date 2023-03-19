@@ -20,7 +20,8 @@ app.use(bodyParser.json());
 
 
 mongoose.connect(database,{
-    dbName : "fullstack",
+    useNewUrlParser: true ,
+    useUnifiedTopology : true ,
 }).then((res)=>{return(console.log("database connected"))}).catch((e)=>console.log("ERRORDB",e))
 
 const USER_SCHEMA = mongoose.Schema({
@@ -37,7 +38,7 @@ const Usercollection = mongoose.model("user",USER_SCHEMA);
 const findData = async (req, res, next) => {
     try {
   
-      const tasks = await Usercollection.findOne({});
+      const tasks = await Usercollection.find({});
   
       res.status(200).json({
         success: true,
