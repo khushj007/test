@@ -39,7 +39,6 @@ async function findData()
 {
     try{
    const respond =  await Usercollection.find({})
-   console.log(respond);
    res.json(JSON.stringify(respond));
     }
     catch(err) {
@@ -68,7 +67,7 @@ app.post("/details",(req,res)=>{
    
 })
 
-app.all("*",(req,res)=>{
+app.get("*",(req,res)=>{
         throw new Error;
     
 })
@@ -80,7 +79,6 @@ const PORT = process.env.PORT || 5000;
 
 
 app.use((err,req,res,next)=>{
-    console.log("i runned");
     return (res.send("404 NOT FOUND"));
 })
 
