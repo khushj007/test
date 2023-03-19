@@ -37,7 +37,7 @@ const Usercollection = mongoose.model("user",USER_SCHEMA);
 const findData = async (req, res, next) => {
     try {
   
-      const tasks = await Usercollection.find({});
+      const tasks = await Usercollection.findOne({});
   
       res.status(200).json({
         success: true,
