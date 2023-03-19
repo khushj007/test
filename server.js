@@ -33,22 +33,39 @@ const Usercollection = mongoose.model("user",USER_SCHEMA);
 
 
 //SERVERS REQUESTS
-app.get("/detail",(req,res)=>{
+
+const findData = async (req, res, next) => {
+    try {
   
-async function findData()
-{
-    try{
-   const respond =  await Usercollection.find({})
-
-   res.json(respond);
+      const tasks = await Usercollection.find({});
+  
+      res.status(200).json({
+        success: true,
+        tasks,
+      });
+    } catch (error) {
+      next(error);
     }
-    catch(err) {
-        res.send(`there has been some err ${err}`);
-    }
-}
-findData();
+  };
 
-});
+
+
+
+
+app.get("/detail",findData);
+  
+// async function findData()
+// {
+//     try{
+//    const respond =  await Usercollection.find({})
+
+//    res.json(respond);
+//     }
+//     catch(err) {
+//         res.send(`there has been some err ${err}`);
+//     }
+// }
+
 
 app.post("/details",(req,res)=>{
 
