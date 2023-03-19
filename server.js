@@ -44,7 +44,7 @@ const findData = async (req, res, next) => {
         tasks,
       });
     } catch (error) {
-      next(error);
+      res.send(`there has been some error : ${error}`)
     }
   };
 
@@ -86,7 +86,7 @@ app.post("/details",(req,res)=>{
 })
 
 app.get("*",(req,res)=>{
-        throw new Error;
+    res.send("404")
     
 })
 
