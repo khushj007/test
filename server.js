@@ -33,7 +33,7 @@ const Usercollection = mongoose.model("user",USER_SCHEMA);
 
 
 //SERVERS REQUESTS
-app.get("/details",(req,res)=>{
+app.get("/detail",(req,res)=>{
   
 async function findData()
 {
@@ -43,7 +43,7 @@ async function findData()
    res.json(JSON.stringify(respond));
     }
     catch(err) {
-        res.send("there has been some error");
+        res.send(`there has been some err ${err}`);
     }
 }
 findData();
