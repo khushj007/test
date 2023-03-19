@@ -19,7 +19,9 @@ app.use(bodyParser.json());
 //SETTING MONGOOSE
 
 
-mongoose.connect(database);
+mongoose.connect(database,{
+    dbName : "fullstack",
+}).then((res)=>{return(console.log("database connected"))}).catch((e)=>console.log("ERRORDB",e))
 
 const USER_SCHEMA = mongoose.Schema({
     fname  : String,
