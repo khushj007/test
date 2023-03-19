@@ -45,7 +45,7 @@ async function findData()
         res.send(`there has been some err ${err}`);
     }
 }
-findData();
+  findData();
 
 })
 
