@@ -34,7 +34,7 @@ const Usercollection = mongoose.model("user", USER_SCHEMA);
 
 const findData = async (req, res, next) => {
   try {
-    const tasks = await Usercollection.find({}).maxTimeMS(30000);
+    const tasks = await Usercollection.find().maxTimeMS(30000);
 
     res.status(200).json({
       success: true,
