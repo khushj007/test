@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
 dotenv.config();
-const database = process.env.DATABASE;
 
 //INITIALIZATIONS
 const app = express();
@@ -14,10 +13,9 @@ app.use(bodyParser.json());
 //SETTING MONGOOSE
 
 mongoose
-  .connect(database, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://Admin-Khush:test123@fullstack.xm7d4k0.mongodb.net/fullstack?retryWrites=true&w=majority"
+  )
   .then((res) => {
     return console.log("database connected");
   })
